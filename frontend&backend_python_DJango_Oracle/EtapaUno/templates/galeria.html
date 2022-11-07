@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link href="{% static 'etapaUno/css/bootstrap.min.css' %}" type="text/css" rel="stylesheet">
+    <link rel="icon" href="{% static 'etapaUno/img/LOGO1.ico' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'etapaUno/css/estilos.css' %}">
+    <link href="{% static 'etapaUno/css/lala.css' %}" rel="stylesheet">
+    <title>Galería</title>
+</head>
+<body class="container">
+    
+    <!--BARRA MENÚ NAVBAR navbar-light bg-white-->
+    <nav class="navbar navbar-expand-sm navbar-light bg-white">
+        <div class="container-fluid">
+            <!-- logo del sitio-->
+            <a class="navbar-brand" href="{% url 'home' %}">
+                <img src="{% static 'etapaUno/img/LOGO.png' %}" width="100" height="100" alt="">
+            </a>
+            <!-- boton amburguesa-->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#opciones">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- enlaces del menu-->
+            <div class="collapse navbar-collapse" id="opciones">   
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'home' %}">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'galeria' %}"> Galería Ventas</a>
+                </li>
+                <div class="container">
+                <button id="btn" class="btn btn-dark">modo oscuro</button>
+                </div>
+            </ul>
+            </div>
+
+        </div>
+    </nav>
+    <!--FIN BARRA MENÚ NAVBAR navbar-light bg-white-->
+
+    <br>
+
+    <!--targetas para empezar interaccion-->
+    <div class="row justify-content-center">
+        <div class="col-4">
+            <a href="{% url 'crearPublicacion' %}" target="_blank">
+            <div class="card w-100 card-border mb-4">
+                <img src="{% static 'etapaUno/img/card01.png' %}" alt="">
+            </div> 
+            </a>
+        </div> 
+    </div>
+    <!--FIN targetas para empezar interaccion-->
+    
+
+    <!--AQUI EMPIEZA LA PUBLICIDAD-->
+    <div class="galeria">
+        <h1>Artículos Tattoo</h1>
+        <div class="linea"></div>
+        <div class="contenedor-imagenes text-center">
+            <div class="imagen">
+                <img src="{% static 'etapaUno/img/img01.png' %}" alt="">
+                <div class="overlay">
+                  <p>A la venta</p>
+                </div>
+            </div>
+            <div class="imagen">
+                <img src="{% static 'etapaUno/img/img02.jpg' %}" alt="">
+                <div class="overlay">
+                    <p>A la venta</p>
+                </div>
+            </div>
+            <div class="imagen">
+                <img src="{% static 'etapaUno/img/img03.jpg' %}" alt="">
+                <div class="overlay">
+                    <p>A la venta</p>
+                </div>
+            </div>
+            <div class="imagen">
+                <img src="{% static 'etapaUno/img/img04.jpg' %}" alt="">
+                <div class="overlay">
+                    <p>A la venta</p>
+                </div>
+            </div>
+            <div class="imagen">
+                <img src="{% static 'etapaUno/img/img05.jpeg' %}" alt="">
+                <div class="overlay">
+                    <p>A la venta</p>
+                </div>
+            </div>
+            <div class="imagen">
+                <img src="{% static 'etapaUno/img/img06.jpg' %}" alt="">
+                <div class="overlay">
+                    <p>A la venta</p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <br>
+
+    <!--FOOTER-->
+    <div id="footer" class="p-5">
+        <div class="container w-50 pt-5">
+
+            <div class="row row-cols-md-2 justify-content-md-center">
+                <div class="col text-center">
+                    <a href="#">
+                        <button class="btn btn-lg rounded-pill btn-warning w-100 p-3 shadow-sm font-weight-bold" type="button">
+                            Contáctenos
+                        </button>
+                    </a>
+                    <br><br>
+                    <a href="https://www.instagram.com/" target="_blank">
+                        <img class="iconos-redes-header" src="{% static 'etapaUno/img/link01.png' %}" alt="Instagram">                     
+                    </a>
+                    
+                    <a href="https://web.whatsapp.com/" target="_blank">
+                        <img class="iconos-redes-header" src="{% static 'etapaUno/img/link02.png' %}" alt="Whatsapp">
+                    </a>
+                
+                    <a href="https://www.google.com/" target="_blank">
+                        <img class="iconos-redes-header" src="{% static 'etapaUno/img/link03.png' %}" alt="Google">
+                    </a>
+                
+                    <a href="https://www.facebook.com/" target="_blank">
+                        <img class="iconos-redes-header" src="{% static 'etapaUno/img/link04.png' %}" alt="Facebook">
+                    </a>
+                    
+
+                </div>
+            </div>
+            <br>
+            <div class="row row-cols-md-2 justify-content-md-center">
+                <div class="col text-center font-weight-light">
+                    <p>Gonzalo Rodriguez, Marco Salinas, Thomas Valenzuela - Copyright 2021 All rights reserved ©
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!--FIN DEL FOOTER-->
+    
+
+    <!--script de jquery-->
+    <script src="{% static 'etapaUno/js/jquery-3.2.1.slim.min.js' %}"></script>
+    <script src="{% static 'etapaUno/js/popper.min.js' %}"></script>
+    <script src="{% static 'etapaUno/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'etapaUno/js/main.js' %}"></script>
+</body>
+</html>

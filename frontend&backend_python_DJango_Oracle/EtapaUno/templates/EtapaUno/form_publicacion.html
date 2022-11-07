@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link href="{% static 'etapaUno/css/bootstrap.min.css' %}" type="text/css" rel="stylesheet">
+    <link rel="icon" href="{% static 'etapaUno/img/LOGO1.ico' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'etapaUno/css/estilos.css' %}">
+    <link href="{% static 'etapaUno/css/lala.css' %}" rel="stylesheet">
+    <title>Su Nueva Publicación</title>
+</head>
+<body class="container">
+    <!--BARRA MENÚ NAVBAR navbar-light bg-white-->
+    <nav class="navbar navbar-expand-sm navbar-light bg-white">
+        <div class="container-fluid">
+            <!-- logo del sitio-->
+            <a class="navbar-brand" href="{% url 'home' %}">
+                <img src="{% static 'etapaUno/img/LOGO.png' %}" width="100" height="100" alt="">
+            </a>
+            <!-- boton amburguesa-->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#opciones">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- enlaces del menu-->
+            <div class="collapse navbar-collapse" id="opciones">   
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'home' %}">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'galeria' %}">Galería Ventas</a>
+              </li>
+              <!--<li class="nav-item">
+                <a class="nav-link" href="{% url 'crearPublicacion' %}">Publicar</a>
+              </li>-->
+              <button id="btn" class="btn btn-dark">modo oscuro</button>
+            </ul>
+            </div>
+
+        </div>
+    </nav>
+
+    <!--SEPARADOR-->
+    <div id="separator-ribbon">
+        <div class="content bg-warning"></div>
+    </div>
+
+    <br>
+    <!--CREATE-->
+    <div class="container">
+        <div class="row galeria">
+            <h1>Dí lo que piensas, lo que buscas :^)</h1>
+        </div>
+
+        <div class="row">
+            <div class="row">
+                <form method="POST" action="#" id="publicacion">
+                    {%csrf_token%}
+                    <div class="form-group">
+                        {{publicacion.id.label}}
+                        {{publicacion.id}}
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        {{publicacion.lapublicacion.label}}
+                        {{publicacion.lapublicacion}}
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        {{publicacion.fecha.label}}
+                        {{publicacion.fecha}}
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        {{publicacion.comuna.label}}
+                        {{publicacion.comuna}}
+                    </div>
+                    <br><br>
+                    <button class="btn"><input type="reset" class="form-control" value="Botalo a la Basura"></button>
+                    <button class="btn"><input type="submit" value="Envialo" class="form-control"></button>
+
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <br><br>
+    <!--FOOTER-->
+    <div id="footer" class="px-5">
+        <div class="container w-50 pt-5">
+
+            <div class="row row-cols-md-2 justify-content-md-center">
+                <div class="col text-center">
+                    <a href="#">
+                        <button class="btn btn-lg rounded-pill btn-warning w-100 p-3 shadow-sm font-weight-bold" type="button">
+                            Contáctenos
+                        </button>
+                    </a>
+                    <br><br>
+                    <a href="https://www.instagram.com/" target="_blank">
+                        <img class="iconos-redes-header" src="{% static 'etapaUno/img/link01.png' %}" alt="Instagram">                     
+                    </a>
+                    
+                    <a href="https://web.whatsapp.com/" target="_blank">
+                        <img class="iconos-redes-header" src="{% static 'etapaUno/img/link02.png' %}" alt="Whatsapp">
+                    </a>
+                
+                    <a href="https://www.google.com/" target="_blank">
+                        <img class="iconos-redes-header" src="{% static 'etapaUno/img/link03.png' %}" alt="Google">
+                    </a>
+                
+                    <a href="https://www.facebook.com/" target="_blank">
+                        <img class="iconos-redes-header" src="{% static 'etapaUno/img/link04.png' %}" alt="Facebook">
+                    </a>
+                    
+
+                </div>
+            </div>
+            <br>
+            <div class="row row-cols-md-2 justify-content-md-center">
+                <div class="col text-center font-weight-light">
+                    <p>Gonzalo Rodriguez, Marco Salinas, Thomas Valenzuela - Copyright 2021 All rights reserved ©
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!--FIN DEL FOOTER-->
+
+    <!--script de jquery-->
+    <script src="{% static 'etapaUno/js/jquery-3.2.1.slim.min.js' %}"></script>
+    <script src="{% static 'etapaUno/js/popper.min.js' %}"></script>
+    <script src="{% static 'etapaUno/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'etapaUno/js/main.js' %}"></script>
+</body>
+</html>
